@@ -37,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
         help = findViewById(R.id.help);
         create_account = findViewById(R.id.create_account);
 
-
         create_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,33 +62,29 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(LoginActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
-
-                                // ...
                             }
                         });
             }
         });
-
     }
-
-
-
-
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
-    }
+//
+//    public void onStart() {
+//        super.onStart();
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        updateUI(currentUser);
+//    }
 
 
     public void updateUI(FirebaseUser account) {
         if (account!=null) {
-            Toast.makeText(this, "이미 로그인 됨", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "로그인 되었습니다.", Toast.LENGTH_LONG).show();
             startActivity(new Intent(this, GpsActivity.class));
+            finish();
         }
         else {
-            Toast.makeText(this, "로그인 요망", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "아이디와 비밀번호를 체크해주세요", Toast.LENGTH_SHORT).show();
+
         }
     }
 }
