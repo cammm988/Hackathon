@@ -14,22 +14,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name="com.example.myapplication.SplashActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
 
         </activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".CreateAccountActivity"></activity>
+        <activity android:name=".GpsActivity" />
 
-        <activity android:name=".LoginActivity">
-        </activity>
-        <activity android:name=".CreateAccountActivity">
-        </activity>
-        <activity android:name=".GpsActivity"></activity>
 
     </application>
 

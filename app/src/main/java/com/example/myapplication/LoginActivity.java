@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
     public void updateUI(FirebaseUser account) {
         if (account!=null) {
             Toast.makeText(this, "로그인 되었습니다.", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(this, GpsActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
         else {
