@@ -1,11 +1,21 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.IOException;
+import java.util.List;
 
 public class GpsActivity extends AppCompatActivity {
 
@@ -31,7 +41,7 @@ public class GpsActivity extends AppCompatActivity {
         //     ① 타이머를 설정하여 GPS_PROVIDER 에서 일정시간 응답이 없는 경우 NETWORK_PROVIDER로 전환
         //     ② 혹은, 둘다 한꺼번헤 호출하여 들어오는 값을 사용하는 방식.
 
-        /*tv = (TextView) findViewById(R.id.textView2);
+        tv = (TextView) findViewById(R.id.textView2);
         tv.setText("위치정보 미수신중");
 
         tv2 = (TextView) findViewById(R.id.textView3);
@@ -67,10 +77,10 @@ public class GpsActivity extends AppCompatActivity {
                 }catch(SecurityException ex){
                 }
             }
-        });*/
+        });
     } // end of onCreate
 
-   /* private final LocationListener mLocationListener = new LocationListener() {
+    private final LocationListener mLocationListener = new LocationListener() {
         public void onLocationChanged(Location location) {
             //여기서 위치값이 갱신되면 이벤트가 발생한다.
             //값은 Location 형태로 리턴되며 좌표 출력 방법은 다음과 같다.
@@ -115,5 +125,5 @@ public class GpsActivity extends AppCompatActivity {
             // 변경시
             Log.d("test", "onStatusChanged, provider:" + provider + ", status:" + status + " ,Bundle:" + extras);
         }
-    };*/
+    };
 } // end of class
